@@ -1,26 +1,24 @@
 #include <stdio.h>
 
-int main(){
-    char senha[5];
-    int caractere, senha2, checar2;
-    char checar[5];
+int main() {
+    int senhaCadastrada, senhaDigitada;
 
-    scanf("%s", senha);
-    senha[4] = '\0';
-    
-    do{ 
-    scanf("%s", checar);
-    checar[4] = '\0';
+    printf("Digite a senha inicial (4 dígitos): ");
+    scanf("%d", &senhaCadastrada);
 
-    senha2 = atoi(senha);
-    checar2 = atoi(checar);
+    printf("Senha cadastrada: %d\n", senhaCadastrada); 
 
-    if(senha2 == checar2){
-        printf("senha valida!\n");
-    } else{
-        printf("senha invalida!\n");
-    }
-    } while(senha2 != checar2);
-       
+    do {
+        printf("Digite a senha: ");
+        scanf("%d", &senhaDigitada);
+
+        if (senhaDigitada == senhaCadastrada) {
+            printf("Senha valida!\n");
+            break;
+        } else {
+            printf("Senha invalida!\n");
+        }
+    } while (1);
+
     return 0;
 }
